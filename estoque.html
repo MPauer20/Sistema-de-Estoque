@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Estoque</title>
+
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e4ec);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 10px;
+      color: #333;
+    }
+
+   
+    .card {
+      background: #fff;
+      width: 100%;
+      max-width: 1000px;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    
+    h1 {
+      color: #004a8f;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0078d7;
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #f4f9ff;
+    }
+
+    
+    .btn-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      background: #0078d7;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,120,215,0.2);
+    }
+
+    .btn:hover {
+      background: #005fa3;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 12px rgba(0,120,215,0.3);
+    }
+
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 25px;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      th, td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Gestão de Estoque</h1>
+
+    <table id="tabelaEstoque">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Produto</th>
+          <th>Marca</th>
+          <th>Volume</th>
+          <th>Aplicação</th>
+          <th>Estoque</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+      </tbody>
+    </table>
+
+    <div class="btn-container">
+      <a href="cadastro" class="btn">➕ Cadastrar Novo Produto</a>
+      <a href="index" class="btn">🏠 Voltar ao Início</a>
+    </div>
+  </div>
+
+  <script>
+    
+    const produtos = [
+      { id: 1, nome: "Detergente", marca: "Marca X", volume: "500ml", aplicacao: "Doméstica", estoque: 12 },
+      { id: 2, nome: "Desinfetante", marca: "Marca Y", volume: "1L", aplicacao: "Industrial", estoque: 5 },
+      { id: 3, nome: "Pano de Limpeza", marca: "Marca Z", volume: "-", aplicacao: "Doméstica", estoque: 20 },
+    ];
+
+    const tbody = document.querySelector("#tabelaEstoque tbody");
+
+    function carregarTabela() {
+      tbody.innerHTML = "";
+      produtos.forEach(prod => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${prod.id}</td>
+          <td>${prod.nome}</td>
+          <td>${prod.marca}</td>
+          <td>${prod.volume}</td>
+          <td>${prod.aplicacao}</td>
+          <td>${prod.estoque}</td>
+          <td>
+            <button onclick="entrada(${prod.id})">⬆ Entrada</button>
+            <button onclick="saida(${prod.id})">⬇ Saída</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function entrada(id) {
+      alert("Entrada registrada para produto ID " + id);
+    }
+
+    function saida(id) {
+      alert("Saída registrada para produto ID " + id);
+    }
+
+    carregarTabela();
+  </script>
+</body>
+</html>

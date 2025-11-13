@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Principal - Sistema de Estoque</title>
+
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e4ec);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 10px;
+      color: #333;
+    }
+
+    
+    .card {
+      background: #fff;
+      width: 100%;
+      max-width: 850px;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    
+    h1 {
+      color: #004a8f;
+      margin-bottom: 10px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      background: #0078d7;
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 8px rgba(0,120,215,0.2);
+    }
+
+    nav a:hover {
+      background: #005fa3;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 12px rgba(0,120,215,0.3);
+    }
+
+   
+    footer {
+      margin-top: 40px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #0078d7;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    
+    @media (max-width: 600px) {
+      .card {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Bem-vindo ao Sistema de Estoque</h1>
+    <p>Gerencie seus produtos, acompanhe o estoque e visualize relatórios de forma prática e moderna.</p>
+
+    <nav>
+      <a href="cadastro">📝 Cadastrar Produto</a>
+      <a href="estoque">📦 Ver Estoque</a>
+    
+    </nav>
+
+    <footer>
+      <p>© 2025 - Sistema de Controle de Estoque | Desenvolvido com 💙</p>
+    </footer>
+  </div>
+</body>
+</html>
